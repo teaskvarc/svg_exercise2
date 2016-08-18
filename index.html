@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Svg-lines</title>
+    <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <svg viewBox="0 0 600 400">
+
+        <defs>
+            <linearGradient id="gradient_1"
+                            x1="0%" y="0%"
+                            x2="100%" y="0%"
+                            spreadMethod="pad">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="#000000" stop-opacity="1"></stop>
+
+            </linearGradient>
+
+            <mask id="mask_1" x="0" y="0" height="200" width="200">
+                <rect x="0" y="0" height="200" width="200"
+                      style="stroke: none; fill: url(#gradient_1)"></rect>
+            </mask>
+        </defs>
+
+
+        <image x="20" y="20" height="200" width="200"
+               xlink:href="images/A.jpg"
+                style="mask: url(#mask_1)">
+
+        </image>
+    </svg>
+</div>
+
+<div class="container">
+
+    <svg viewBox="0 0 600 300">
+
+        <text x="20" y="20">SVG text example</text>
+
+        <!-- 30deg around 20 by 60 -->
+        <text x="20" y="60" transform="rotate(30 20,60)"
+
+            style="letter-spacing: 3;"
+
+        >SVG text example</text>
+
+
+
+        <text x="20" y="120"
+
+              style="stroke:#cccccc; stroke-width: 3; fill: #000000; font-size: 40px;"
+
+        >SVG text example</text>
+
+
+        <!-- tb means TO BOTTOM-->
+        <text x="20" y="140"
+
+            style="writing-mode: tb;"
+
+        >SVG text example</text>
+
+        <text x="300" y="180"
+
+              style="direction: rtl; unicode-bidi: bidi-override;"
+
+        >SVG text example</text>
+
+    </svg>
+</div>
+
+<div class="container">
+
+    <svg viewBox="0 0 600 300">
+        <defs>
+            <path id="myTextPath" d="M75,20 a1,1 0 0,0 100,0"></path>
+        </defs>
+
+        <text x="20" y="40" style="stroke: #000000;">
+            <textPath xlink:href="#myTextPath">
+                Mama Pidzama
+            </textPath>
+
+        </text>
+
+    </svg>
+
+
+
+</div>
+
+
+
+
+    <!-- 3 important definitions regarding SVG text:
+
+        *Glyphs: visual representation of letters and symbols
+        *Fonts: are collections of
+        *Characters: binary representations of letters
+    -->
+
+    <!-- glej <textPath> -->
+
+
+
+
+
+</body>
+</html>
